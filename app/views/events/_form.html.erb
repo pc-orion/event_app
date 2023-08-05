@@ -1,0 +1,27 @@
+<!-- app/views/events/_form.html.erb -->
+<%= form_with model: @event, local: true do |form| %>
+    <div class="field">
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+    </div>
+
+    <div class="field">
+        <%= form.label :description %>
+        <%= form.text_area :description %>
+    </div>
+    
+    <div class="field">
+        <%= form.label :image %>
+        <%= form.file_field :image %>
+    </div>
+
+    <div class="field">
+        <%= form.label :gallery_images, 'Gallery Images' %>
+        <%= form.file_field :gallery_images, multiple: true %>
+    </div>
+
+    <div class="actions">
+        <%= form.submit %>
+    </div>
+<% end %>
+

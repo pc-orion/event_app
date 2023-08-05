@@ -1,0 +1,35 @@
+<span> <td><%= button_to 'Back', root_path, method: :get %></td> </span>
+<hr/>
+<div>
+    <div style="display: flex; justify-content: space-around">
+        <h2><%= @event.name %></h2>
+    </div>
+
+    <div style="display: flex; justify-content: space-around">
+        <p><%= @event.description %></p>
+    </div>
+
+ 
+   <div>
+        <% if @event.gallery_images.attached? %>
+            <% @event.gallery_images.each do |image| %>
+                <%= image_tag image, style: 'width: 257px; height: 200px; object-fit: cover;' %>
+            <% end %>
+        <% else %>
+             <div>
+                <% if @event.image.attached? %>
+                    <%= image_tag @event.image, style: 'width: 257px; height: 200px; object-fit: cover;' %>
+                <% else %>
+                    <em>No images attached</em>
+                <% end %>
+            </div>
+        <% end %>
+   </div>
+   
+
+
+</div>
+
+
+
+

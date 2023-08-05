@@ -1,0 +1,31 @@
+<div style="display: flex; justify-content: space-around">
+  <h1>All Events</h1>
+</div>
+
+<span> <%= button_to "New Event", new_event_path, method: :get %> </span>
+
+ <hr/>
+ 
+<div style = "display: flex; flex-wrap: wrap; " >
+  <% @events.each do |event| %>
+    
+    <div style = "padding: 5px " >
+
+      <div> 
+      <%= link_to event_path(event) do %>
+
+        <% if event.image.attached? %>
+          <%= image_tag event.image, style: 'width: 357px; height: 300px; object-fit: cover;' %>
+        <% else %>
+          <em>No image attached</em>
+        <% end %>
+      </div>
+        <h5><%= event.name %></h5>
+        <p><%= event.created_at.strftime('%Y-%m-%d') %></p>
+      <% end %>
+
+    </div>
+  <% end %>
+</div>
+
+
