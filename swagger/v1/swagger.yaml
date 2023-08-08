@@ -1,0 +1,37 @@
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  /events:
+    get:
+      summary: Retrieves all events
+      tags:
+        - Events
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    description:
+                      type: string
+                    image:
+                      type: string
+                    gallery_images:
+                      type: array
+                      items:
+                        type: string
+                required:
+                  - id
+                  - name

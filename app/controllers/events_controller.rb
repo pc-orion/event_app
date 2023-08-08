@@ -3,12 +3,11 @@ class EventsController < ApplicationController
   
     def index
       @events = Event.all
-      render :index
-    #   render json: @events
-
+      # render json: @events
     end
   
     def show
+      # render json: @event
     end
   
     def new
@@ -25,6 +24,7 @@ class EventsController < ApplicationController
     end
   
     def edit
+      # render json: @event
     end
   
     def update
@@ -38,6 +38,7 @@ class EventsController < ApplicationController
     def destroy
       @event.destroy
       redirect_to events_url, notice: 'Event was successfully destroyed.'
+      head :no_content
     end
   
     private
