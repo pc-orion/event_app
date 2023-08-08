@@ -24,7 +24,7 @@ class EventsController < ApplicationController
     end
   
     def edit
-      # render json: @event
+      render json: @event
     end
   
     def update
@@ -48,7 +48,7 @@ class EventsController < ApplicationController
     end
   
     def event_params
-      params.require(:event).permit(:name, :description, :image, gallery_images: [])
+      params.require(:event).permit(:name, :description, :date, :image, gallery_images: [])
     end
   end
   
